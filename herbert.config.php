@@ -2,6 +2,15 @@
 
 
 return [
+     /**
+      * Premier Name
+      */
+    'pluginName' => 'Premier Newsletter',
+
+    /**
+     * Prefix Table
+     */
+    'prefix' => 'prem_',
 
     /**
      * The Herbert version constraint.
@@ -14,7 +23,7 @@ return [
     'requires' => [
         __DIR__ . '/app/customPostTypes.php'
     ],
-    
+
     /**
      * The tables to manage.
      */
@@ -61,7 +70,7 @@ return [
      * The routes to auto-load.
      */
     'routes' => [
-        'PremierNewsletter' => __DIR__ . '/app/routes.php'
+        'PremierNewsletter' => __DIR__ . '/app/routes.php',
     ],
 
     /**
@@ -86,7 +95,8 @@ return [
      * when rendering a view in twig.
      */
     'views' => [
-        'PremierNewsletter' => __DIR__ . '/resources/views'
+        'PremierNewsletterDashboard' => __DIR__ . '/resources/views/dashboard',
+        'PremierNewsletterList' => __DIR__ . '/resources/views/list'
     ],
 
     /**

@@ -7,3 +7,11 @@
 /** @var  \Herbert\Framework\Panel $panel */
 /** @var  \Herbert\Framework\Shortcode $shortcode */
 /** @var  \Herbert\Framework\Widget $widget */
+
+use Illuminate\Database\Capsule\Manager as Capsule;
+
+Capsule::schema()->create('list', function($table)
+{
+    $table->increments('id');
+    $table->string('name');
+});
