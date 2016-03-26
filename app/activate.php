@@ -8,10 +8,12 @@
 /** @var  \Herbert\Framework\Shortcode $shortcode */
 /** @var  \Herbert\Framework\Widget $widget */
 
-use Illuminate\Database\Capsule\Manager as Capsule;
+/*use Illuminate\Database\Capsule\Manager as Capsule;
+use PremierNewsletter\Helper;
 
-Capsule::schema()->create('list', function($table)
+Capsule::schema()->create('list_email', function($table)
 {
     $table->increments('id');
     $table->string('name');
 });
+*/

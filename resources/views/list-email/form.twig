@@ -1,0 +1,77 @@
+{% if list is empty %}
+    {% set label_action = 'Add a New List'%}
+    {% set action = 'create'%}
+{% else %}
+    {% set label_action = 'Update List'%}
+    {% set action = 'update&address=' ~ list.address %}
+{% endif %}
+
+{% set addressDomain = list.address | split('@') %}
+
+<div class="wrap">
+    <h1>
+        List Management -
+        {{label_action}}
+    </h1>
+    <form method="POST" action="{{list_url}}&action={{action}}">
+        <table class="form-table">
+            <tbody>
+                <tr class="form-field form-required">
+                    <th scope="row">
+                        <label for="address">Address
+                            <span class="description">(required)</span>
+                        </label>
+                    </th>
+                    <td>
+                        <input class="regular-text" name="address" type="text" value="{{addressDomain[0]}}" required autocapitalize="none" autocorrect="off" maxlength="60">
+                    </td>
+                    <td>
+                        <select class="small-text" name="domain">
+                            {% for domain in domains %}
+                                <option value="{{domain.name}}" {% if domain.name == addressDomain[1] %} selected="selected" {% endif %}>{{domain.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="name">Name
+                            <span class="description">(required)</span>
+                        </label>
+                    </th>
+                    <td colspan="2">
+                        <input class="regular-text" name="name" type="text" id="name" value="{{list.name}}" required autocapitalize="none" autocorrect="off" maxlength="60">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="description">Description
+                            <span class="description">(required)</span>
+                        </label>
+                    </th>
+                    <td colspan="2">
+                        <input class="regular-text" name="description" type="text" id="name" value="{{list.description}}" required autocapitalize="none" autocorrect="off" maxlength="60">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="access_level">Access Level
+                            <span class="description">(required)</span>
+                        </label>
+                    </th>
+                    <td colspan="2">
+                        <select class="regular-text" id="access-level" name="access_level">
+                            <option value="readonly" {% if list.access_level == "readonly" %} selected="selected" {% endif %}>Read-only</option>
+                            <option value="members" {% if list.access_level == "members" %} selected="selected" {% endif %}>Members</option>
+                            <option value="everyone" {% if list.access_level == " everyone" %}selected=" selected" {% endif %}>Everyone</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="submit">
+            <a class="button button-default" href="{{list_url}}">Cancel</a>
+            <input type="submit" class="button button-primary" value="{{label_action}}">
+        </p>
+    </form>
+</div>

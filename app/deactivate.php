@@ -8,7 +8,8 @@
 /** @var  \Herbert\Framework\Shortcode $shortcode */
 /** @var  \Herbert\Framework\Widget $widget */
 
-
+/*
 use Illuminate\Database\Capsule\Manager as Capsule;
+use PremierNewsletter\Helper;
 
-Capsule::schema()->dropIfExists('list');
+Capsule::schema()->dropIfExists('list_email');*/

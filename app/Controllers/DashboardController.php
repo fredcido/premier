@@ -11,6 +11,6 @@ class DashboardController {
      */
     public function index($id)
     {
-        return view('@PremierNewsletterDashboard/index.twig', ['gilson' => 'terra']);
+        return view('@PremierNewsletter/dashboard/index.twig', ['gilson' => 'terra']);
     }
 }

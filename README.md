@@ -1,4 +1,4 @@
-Herbert
+Premier Newsletter
 ===============
 
 Welcome to Herbert. Please check out the docs [here](http://getherbert.com/).
@@ -10,5 +10,3 @@ You can find a full plugin built in Herbert [here](https://github.com/bigbitecre
 ---
 If you are looking for the old version, you can find it here: https://github.com/getherbert/herbert/tree/pre
 And the docs for that version: http://getherbert.com/pre
-
-

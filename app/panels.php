@@ -17,9 +17,17 @@ $panel->add([
 $panel->add([
     'type' => 'sub-panel',
     'parent' => 'mainPanel',
-    'as' => 'list',
+    'as' => 'listEmail',
     'title' => 'List Management',
     'slug' => 'premiernewsletter-list',
-    'icon' => 'dashicons-media-audio',
     'uses' => __NAMESPACE__.'\Controllers\ListController@list',
+    'get' => [
+        'form' => __NAMESPACE__.'\Controllers\ListController@form',
+        'confirm-delete' => __NAMESPACE__.'\Controllers\ListController@confirmDelete',
+    ],
+    'post' => [
+        'create' => __NAMESPACE__.'\Controllers\ListController@create',
+        'update' => __NAMESPACE__.'\Controllers\ListController@update',
+        'delete' => __NAMESPACE__.'\Controllers\ListController@delete',
+    ],
 ]);

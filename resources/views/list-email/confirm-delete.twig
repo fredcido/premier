@@ -1,0 +1,20 @@
+<div class="wrap">
+    <h1>Delete List</h1>
+
+    <p>You want delete these lists?</p>
+    <form method="POST" action="{{list_url}}&action=delete">
+        <ul>
+
+            {% for address in addresses %}
+                <li>
+                    <input type="hidden" name="addresses[]" value="{{address}}">Address: <b>{{address}}</b>
+                </li>
+            {% endfor %}
+        </ul>
+        <input type="hidden" name="delete_option" value="delete">
+        <input type="hidden" name="action" value="dodelete">
+        <p class="submit">
+            <input type="submit" name="submit" id="submit" class="button button-primary" value="Confirmar exclusão">
+        </p>
+    </form>
+</div>

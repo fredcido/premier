@@ -24,6 +24,12 @@ return [
         __DIR__ . '/app/customPostTypes.php'
     ],
 
+    'mailgun' => [
+        'private-key' => 'key-9949b17a15a7754c7cf9c45939edc5fb',
+        'public-key' => 'pubkey-e72993e845ffbe33a3611d5240cb0441',
+        'domain' => 'gilsonterra.com'
+    ],
+
     /**
      * The tables to manage.
      */
@@ -95,8 +101,7 @@ return [
      * when rendering a view in twig.
      */
     'views' => [
-        'PremierNewsletterDashboard' => __DIR__ . '/resources/views/dashboard',
-        'PremierNewsletterList' => __DIR__ . '/resources/views/list'
+        'PremierNewsletter' => __DIR__ . '/resources/views'
     ],
 
     /**
