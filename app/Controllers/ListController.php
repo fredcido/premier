@@ -3,10 +3,11 @@
 namespace PremierNewsletter\Controllers;
 
 use Herbert\Framework\Http;
-use PremierNewsletter\Models\ListEmail;
-use PremierNewsletter\Repositories\ListRepository;
 use Herbert\Framework\Notifier;
 use Herbert\Framework\RedirectResponse;
+use PremierNewsletter\Repositories\ListRepository;
+use PremierNewsletter\Repositories\DomainRepository;
+
 
 class ListController
 {
