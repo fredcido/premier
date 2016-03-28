@@ -790,12 +790,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "2b767bc4a6b770d6d90ffc4f3e82f6533627071c"
+                "reference": "3275d53d5d51a7adee6fa488d07969ca9d421b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/2b767bc4a6b770d6d90ffc4f3e82f6533627071c",
-                "reference": "2b767bc4a6b770d6d90ffc4f3e82f6533627071c",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/3275d53d5d51a7adee6fa488d07969ca9d421b5b",
+                "reference": "3275d53d5d51a7adee6fa488d07969ca9d421b5b",
                 "shasum": ""
             },
             "require": {
@@ -839,7 +839,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-10 11:16:56"
+            "time": "2016-03-16 15:33:49"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -956,12 +956,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "278bd66214f74843dd2058b8de22440c44eed6ea"
+                "reference": "dfd890574a4421ec1b64dc18ec4022b348cd200a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/278bd66214f74843dd2058b8de22440c44eed6ea",
-                "reference": "278bd66214f74843dd2058b8de22440c44eed6ea",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/dfd890574a4421ec1b64dc18ec4022b348cd200a",
+                "reference": "dfd890574a4421ec1b64dc18ec4022b348cd200a",
                 "shasum": ""
             },
             "require": {
@@ -1001,7 +1001,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-25 11:38:37"
+            "time": "2016-03-27 16:15:51"
         },
         {
             "name": "symfony/http-kernel",
