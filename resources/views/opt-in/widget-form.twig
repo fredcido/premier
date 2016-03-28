@@ -1,5 +1,13 @@
+{{ args.before_widget|raw }}
+
+{{ args.before_title|raw }}
+{{ args.title|raw }}
+{{ args.after_title|raw }}
+
 <form action="/subscribe" method="POST">
-    <input name="email" type="text" required placeholder="Your Email">
-    <input name="firstName" type="text" required placeholder="Your Name">
-    <button type="submit" >Newsletter Signup</button>
+    <p><input name="email" type="text" required placeholder="Your Email"></p>
+    <p><input name="firstName" type="text" required placeholder="Your Name"></p>
+    <p><button type="submit" >Newsletter Signup</button></p>
 </form>
+
+{{ args.after_widget|raw }}

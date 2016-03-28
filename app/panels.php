@@ -7,7 +7,7 @@ namespace PremierNewsletter;
 $panel->add([
     'type'   => 'panel',
     'as'     => 'mainPanel',
-    'title'  => 'Premier',
+    'title'  => 'Newsletter',
     'rename' => 'Dashboard',
     'slug'   => 'premiernewsletter-dashboard',
     'icon'   => Helper::assetUrl('/img/icon.jpeg'),
