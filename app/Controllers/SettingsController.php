@@ -2,11 +2,7 @@
 
 namespace PremierNewsletter\Controllers;
 
-use Herbert\Framework\Http;
-use Herbert\Framework\Notifier;
-use Herbert\Framework\RedirectResponse;
 use PremierNewsletter\Repositories\ListRepository;
-use PremierNewsletter\Repositories\DomainRepository;
 
 class SettingsController extends AbstractController
 {

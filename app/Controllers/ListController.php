@@ -16,7 +16,7 @@ class ListController extends AbstractController
     private $_listRepository;
 
     /**
-     * Construct
+     * Construct.
      */
     public function __construct()
     {
@@ -35,7 +35,7 @@ class ListController extends AbstractController
     {
         $data = [
             'lists' => $this->_listRepository->getAll(),
-            'label_add' => esc_html_x( 'Add New', 'premier' ),
+            'label_add' => esc_html_x('Add New', 'premier'),
             'panel_url' => $this->getPanelUrl(),
         ];
 
