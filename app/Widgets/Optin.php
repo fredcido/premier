@@ -3,6 +3,7 @@
 namespace PremierNewsletter\Widgets;
 
 use PremierNewsletter\Helper;
+use PremierNewsletter\Repositories;
 
 class Optin extends \WP_Widget
 {
@@ -22,26 +23,43 @@ class Optin extends \WP_Widget
 
     public function widget($args, $instance)
     {
-        // outputs the content of the widget
+        if ( ! empty( $instance['title'] ) ) {
+            $args['title'] = apply_filters( 'widget_title', $instance['title'] );
+        }
+        echo herbert('twig')->render(
+                '@PremierNewsletter/opt-in/widget-form.twig', 
+                [
+                    'args'        => $args,
+                    'instance'    => $instance
+                ]
+        );
     }
 
     public function form($instance)
     {
         $title = ! empty( $instance['title'] ) ? $instance['title'] : $this->defaultTitle;
 
-        echo herbert('Twig_Environment')->render(
+        $listRepository = new Repositories\ListRepository();
+        $allLists = $listRepository->getAll();
+
+        echo herbert('twig')->render(
                 '@PremierNewsletter/opt-in/admin-form.twig', 
                 [
-                    'instance'  => $instance,
-                    'widget'    => $this,
-                    'title'     => $title
+                    'widget'        => $this,
+                    'instance'      => $instance,
+                    'savedTitle'    => $title,
+                    'savedList'     => null,
+                    'allLists'      => $allLists
                 ]
         );
     }
 
     public function update($new_instance, $old_instance)
     {
-        // processes widget options to be saved
+        $instance = array();
+        $instance['title'] = ( !empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+
+        return $instance;
     }
 
 }

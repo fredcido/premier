@@ -2,11 +2,15 @@
     <label for="{{ widget.get_field_id('title') }}">
         Title
     </label> 
-    <input required class="widefat" id="{{ widget.get_field_id( 'title' ) }}" name="{{ widget.get_field_name( 'title' ) }}" type="text" value="{{ title }}">
+    <input required class="widefat" id="{{ widget.get_field_id( 'title' ) }}" name="{{ widget.get_field_name( 'title' ) }}" type="text" value="{{ savedTitle }}">
 </p>
 <p>
     <label for="{{ widget.get_field_id('list') }}">
-        Deafult List
+        Default List
     </label> 
-    <input class="widefat" id="{{ widget.get_field_id( 'list' ) }}" name="{{ widget.get_field_name( 'list' ) }}" type="text" value="{{ list }}">
+    <select class="widefat" name="{{ widget.get_field_name('list') }}" id="{{ widget.get_field_id( 'list' ) }}">
+        {% for list in allLists %}
+            <option value="{{list.address}}" {% if list.address == savedList %} selected="selected" {% endif %}>{{list.description}}</option>
+        {% endfor %}
+    </select>
 </p>
