@@ -18,7 +18,7 @@ $panel->add([
     'type' => 'sub-panel',
     'parent' => 'mainPanel',
     'as' => 'listPanel',
-    'title' => 'List Management',
+    'title' => 'List Management (RAPADURA)',
     'slug' => 'premiernewsletter-list',
     'uses' => __NAMESPACE__.'\Controllers\ListController@index',
     'get' => [
