@@ -13,9 +13,10 @@ final class SettingsRepository extends AbstractRepository
      *
      * @return string
      */
-    public function get($param)
+    public function get($param, $fallback = null)
     {
-        return $this->getAll()[$param];
+        $all = $this->getAll();
+        return isset($all[$param]) ? $all[$param] : $fallback;
     }
 
     /**

@@ -19,6 +19,16 @@
                         <input class="regular-text" name="mailgun_private_key" type="text" value="{{settings.mailgun_private_key}}" required autocapitalize="none" autocorrect="off" maxlength="60">
                     </td>
                 </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="public_key">Public Key
+                            <span class="description">(required)</span>
+                        </label>
+                    </th>
+                    <td colspan="2">
+                        <input class="regular-text" name="mailgun_public_key" type="text" value="{{settings.mailgun_public_key}}" required autocapitalize="none" autocorrect="off" maxlength="60">
+                    </td>
+                </tr>
             </tbody>
         </table>
         <h2 class="title">Others</h2>

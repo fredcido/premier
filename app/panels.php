@@ -10,7 +10,7 @@ $panel->add([
     'title'  => 'Newsletter',
     'rename' => 'Dashboard',
     'slug'   => 'premiernewsletter-dashboard',
-    'icon'   => Helper::assetUrl('/img/icon.jpeg'),
+    'icon'   => 'dashicons-email',
     'uses'   => __NAMESPACE__.'\Controllers\DashboardController@index',
 ]);
 

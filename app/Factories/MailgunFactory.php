@@ -18,11 +18,14 @@ final class MailgunFactory
      *
      * @return Mailgun\Mailgun Object mailgun
      */
-    public static function create()
+    public static function create($key = null)
     {
         try {
+            $key = empty($key) ? 'mailgun_private_key' : $key;
+
             $settingsRepository = new SettingsRepository();
-            $mailgun = new Mailgun(null);
+            $mailgun = new Mailgun($settingsRepository->get($key));
+
             $result = $mailgun->get("domains", array('limit' => 5, 'skip' => 10));
 
             return $mailgun;

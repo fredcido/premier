@@ -5,6 +5,8 @@ namespace PremierNewsletter\Controllers;
 use Herbert\Framework\Http;
 use Herbert\Framework\RedirectResponse;
 
+use PremierNewsletter\Repositories;
+
 class SubscribeController extends AbstractController
 {
 
@@ -17,6 +19,7 @@ class SubscribeController extends AbstractController
      */
     public function save(Http $http)
     {
-        var_dump($http->all());exit;
+        $subscribeRepository = new Repositories\SubscribeRepository();
+        $status = $subscribeRepository->subscribe($http->all());
     }
 }
