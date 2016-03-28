@@ -26,8 +26,8 @@ return [
 
     'mailgun' => [
         'private-key' => 'key-9949b17a15a7754c7cf9c45939edc5fb',
-        'public-key' => 'pubkey-e72993e845ffbe33a3611d5240cb0441',
-        'domain' => 'gilsonterra.com'
+        'public-key'  => 'pubkey-e72993e845ffbe33a3611d5240cb0441',
+        'domain'      => 'gilsonterra.com'
     ],
 
     /**

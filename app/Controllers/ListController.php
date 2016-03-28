@@ -34,7 +34,7 @@ class ListController extends AbstractController
     public function index()
     {
         $data = [
-            'lists' => $this->_listRepository->getAll(),
+            'lists'     => $this->_listRepository->getAll(),
             'label_add' => esc_html_x('Add New', 'premier'),
             'panel_url' => $this->getPanelUrl(),
         ];
@@ -55,7 +55,7 @@ class ListController extends AbstractController
         $address = $http->get('address');
 
         $data = [
-            'domains' => $domainRepository->getAll(),
+            'domains'   => $domainRepository->getAll(),
             'panel_url' => $this->getPanelUrl(),
         ];
 

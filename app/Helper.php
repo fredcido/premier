@@ -1,6 +1,7 @@
 <?php namespace PremierNewsletter;
 
-class Helper {
+class Helper
+{
 
     /**
      * The booted state.
@@ -45,13 +46,11 @@ class Helper {
      */
     public static function get($key = null, $default = null)
     {
-        if ( ! self::$booted)
-        {
+        if (! self::$booted) {
             self::boot();
         }
 
-        if ($key === null)
-        {
+        if ($key === null) {
             return self::$config;
         }
 
@@ -66,8 +65,7 @@ class Helper {
      */
     public static function path($file)
     {
-        if ( ! self::$booted)
-        {
+        if (! self::$booted) {
             self::boot();
         }
 
@@ -84,8 +82,7 @@ class Helper {
     {
         $asset = trim(self::get('assets', 'assets'), '/');
 
-        if ($file !== null)
-        {
+        if ($file !== null) {
             $asset .= '/' . trim($file, '/');
         }
 
@@ -104,5 +101,4 @@ class Helper {
             substr(self::asset($file), strlen(content_directory()))
         );
     }
-
 }

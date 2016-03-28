@@ -6,8 +6,7 @@
  * Gives you access to the Helper class from Twig
  * {{ PremierNewsletter.helper('assetUrl', 'icon.png') }}
  */
-$api->add('helper', function ()
-{
+$api->add('helper', function () {
     $args = func_get_args();
     $method = array_shift($args);
 
