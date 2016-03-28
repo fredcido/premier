@@ -2,7 +2,7 @@
 
 namespace PremierNewsletter\Controllers;
 
-class DashboardController extends AbstractController
+final class DashboardController extends AbstractController
 {
     /**
      * Show list emails list.

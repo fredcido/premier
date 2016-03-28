@@ -17,7 +17,6 @@ final class MailgunFactory
     public static function create()
     {
         $settingsRepository = new SettingsRepository();
-        $settings = $settingsRepository->findFirst();
-        return new Mailgun($settings['mailgun_private_key']);
+        return new Mailgun($settingsRepository->get('mailgun_private_key'));
     }
 }

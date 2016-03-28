@@ -2,40 +2,47 @@
 
 namespace PremierNewsletter\Repositories;
 
-use PremierNewsletter\Models\PreSettings;
+use PremierNewsletter\Helper;
 
 final class SettingsRepository extends AbstractRepository
 {
     /**
-     * Find first register (because is it only information).
+     * Get setting especifie.
      *
-     * @return [type] [description]
+     * @param string $param Pamameter
+     *
+     * @return string
      */
-    public function findFirst()
+    public function get($param)
     {
-        return PreSettings::get()->first();
+        return $this->getAll()[$param];
+    }
+
+    /**
+     * Get All.
+     *
+     * @return array Settings
+     */
+    public function getAll()
+    {
+        return get_option(Helper::prefix('settings'));
     }
 
      /**
-      * Update data settings.
+      * Update Settings.
       *
-      * @param  [type] $settingsId [description]
-      * @param  array  $settings   [description]
+      * @param  array  $settings [description]
       *
       * @return [type]           [description]
       */
-     public function update($settingsId, array $settings)
+     public function update(array $settings)
      {
-         try{
-             $model = PreSettings::find($settingsId);
-             $model->fill($settings);
-             $model->save();
+         try {
+             update_option(Helper::prefix('settings'), $settings);
              $response = $this->configNotifier('Updated!', self::NOTIFIER_CLASS_SUCCESS);
-         }
-         catch(Exception $e){
+         } catch (Exception $e) {
              $response = $this->configNotifier($e->getMessage(), self::NOTIFIER_CLASS_ERROR);
          }
-
 
          return $response;
      }

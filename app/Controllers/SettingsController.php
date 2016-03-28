@@ -7,7 +7,7 @@ use Herbert\Framework\Http;
 use Herbert\Framework\Notifier;
 use Herbert\Framework\RedirectResponse;
 
-class SettingsController extends AbstractController
+final class SettingsController extends AbstractController
 {
     /**
      * @var SettingsRepository
@@ -24,7 +24,7 @@ class SettingsController extends AbstractController
     {
         $data = [
             'panel_url' => $this->getPanelUrl(),
-            'settings' => $this->_settingsRepository->findFirst(),
+            'settings' => $this->_settingsRepository->getAll(),
         ];
 
         return view('@PremierNewsletter/settings/form.twig', $data);
@@ -39,7 +39,7 @@ class SettingsController extends AbstractController
      */
     public function update(Http $http)
     {
-        $response = $this->_settingsRepository->update($http->get('settings_id'), $http->all());
+        $response = $this->_settingsRepository->update($http->all());
         Notifier::notify($response['message'], $response['class'], true);
 
         return new RedirectResponse($this->getPanelUrl());

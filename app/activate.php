@@ -7,7 +7,7 @@
 /** @var  \Herbert\Framework\Panel $panel */
 /** @var  \Herbert\Framework\Shortcode $shortcode */
 /** @var  \Herbert\Framework\Widget $widget */
-
+/*
 use Illuminate\Database\Capsule\Manager as Capsule;
 use PremierNewsletter\Helper;
 
@@ -23,3 +23,5 @@ Capsule::schema()->create('pre_settings', function($table)
 
 // Insert register
 Capsule::table('pre_settings')->insertGetId(array('mailgun_private_key' => 'private-key'));
+
+*/

@@ -8,7 +8,7 @@ use Herbert\Framework\RedirectResponse;
 use PremierNewsletter\Repositories\ListRepository;
 use PremierNewsletter\Repositories\DomainRepository;
 
-class ListController extends AbstractController
+final class ListController extends AbstractController
 {
     /**
      * @var ListRepository
