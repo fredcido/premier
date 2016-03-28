@@ -8,8 +8,7 @@ use Herbert\Framework\RedirectResponse;
 use PremierNewsletter\Repositories\ListRepository;
 use PremierNewsletter\Repositories\DomainRepository;
 
-
-class ListController
+class ListController extends AbstractController
 {
     /**
      * @var ListRepository
@@ -17,14 +16,12 @@ class ListController
     private $_listRepository;
 
     /**
-     * @var string
+     * Construct
      */
-    private $_urlList;
-
     public function __construct()
     {
         $this->_listRepository = new ListRepository();
-        $this->_urlList = panel_url('PremierNewsletter::listEmail');
+        $this->setPanelUrl(panel_url('PremierNewsletter::listPanel'));
     }
 
     /**
@@ -34,15 +31,15 @@ class ListController
      *
      * @return [type] [description]
      */
-    public function list()
+    public function index()
     {
         $data = [
             'lists' => $this->_listRepository->getAll(),
-            'label_add' => _('Add New'),
-            'list_url' => $this->_urlList,
+            'label_add' => esc_html_x( 'Add New', 'premier' ),
+            'panel_url' => $this->getPanelUrl(),
         ];
 
-        return view('@PremierNewsletter/list-email/list.twig', $data);
+        return view('@PremierNewsletter/list-email/index.twig', $data);
     }
 
     /**
@@ -59,7 +56,7 @@ class ListController
 
         $data = [
             'domains' => $domainRepository->getAll(),
-            'list_url' => $this->_urlList,
+            'panel_url' => $this->getPanelUrl(),
         ];
 
         // Edit
@@ -81,7 +78,7 @@ class ListController
     {
         $data = [
             'addresses' => $http->get('addresses'),
-            'list_url' => $this->_urlList,
+            'panel_url' => $this->getPanelUrl(),
         ];
 
         return view('@PremierNewsletter/list-email/confirm-delete.twig', $data);
@@ -99,7 +96,7 @@ class ListController
         $response = $this->_listRepository->create($http->all());
         Notifier::success($response->message, true);
 
-        return new RedirectResponse($this->_urlList);
+        return new RedirectResponse($this->getPanelUrl());
     }
 
     /**
@@ -118,7 +115,7 @@ class ListController
             Notifier::success($response->message, true);
         }
 
-        return new RedirectResponse($this->_urlList);
+        return new RedirectResponse($this->getPanelUrl());
     }
 
     /**
@@ -133,6 +130,6 @@ class ListController
         $response = $this->_listRepository->update($http->get('address'), $http->all());
         Notifier::success($response->message, true);
 
-        return new RedirectResponse($this->_urlList);
+        return new RedirectResponse($this->getPanelUrl());
     }
 }

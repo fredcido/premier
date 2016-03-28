@@ -4,7 +4,7 @@ namespace PremierNewsletter\Controllers;
 use Herbert\Framework\Models\Post;
 use PremierNewsletter\Helper;
 
-class DashboardController {
+class DashboardController extends AbstractController {
 
     /**
      * Show list emails list

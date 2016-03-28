@@ -1,7 +1,7 @@
 <div class="wrap">
   <h1>
     List Management
-    <a href="{{list_url}}&action=form" class="page-title-action">{{label_add}}</a>
+    <a href="{{panel_url}}&action=form" class="page-title-action">{{label_add}}</a>
   </h1>
   <br class="clear">
   <div class="form-row">
@@ -25,9 +25,9 @@
             <td>{{ list.access_level }}</td>
             <td>{{ list.created_at }}</td>
             <td>
-                <a href="{{list_url}}&action=form&address={{list.address}}">View</a> |
+                <a href="{{panel_url}}&action=form&address={{list.address}}">View</a> |
                 <a href="#">Export</a> |
-                <a href="{{list_url}}&action=confirm-delete&addresses[]={{list.address}}" style="color:#a00">Delete</a>
+                <a href="{{panel_url}}&action=confirm-delete&addresses[]={{list.address}}" style="color:#a00">Delete</a>
             </td>
           </tr>
         {% endfor %}

@@ -11,9 +11,8 @@
 /*use Illuminate\Database\Capsule\Manager as Capsule;
 use PremierNewsletter\Helper;
 
-Capsule::schema()->create('list_email', function($table)
+Capsule::schema()->create('pre_settings', function($table)
 {
     $table->increments('id');
-    $table->string('name');
-});
-*/
+    $table->string('mailgun_private_key');
+});*/

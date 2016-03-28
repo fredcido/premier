@@ -3,9 +3,10 @@
 namespace PremierNewsletter\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-class ListEmail extends Eloquent
+
+class PreSettings extends Eloquent
 {
-    protected $table = 'list_email';
+    protected $table = 'pre_settings';
     protected $guarded = array('id');
     public $timestamps = false;
 }

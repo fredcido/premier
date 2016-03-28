@@ -2,7 +2,7 @@
     <h1>Delete List</h1>
 
     <p>You want delete these lists?</p>
-    <form method="POST" action="{{list_url}}&action=delete">
+    <form method="POST" action="{{panel_url}}&action=delete">
         <ul>
 
             {% for address in addresses %}
@@ -14,7 +14,7 @@
         <input type="hidden" name="delete_option" value="delete">
         <input type="hidden" name="action" value="dodelete">
         <p class="submit">
-            <a class="button button-default" href="{{list_url}}">Cancel</a>
+            <a class="button button-default" href="{{panel_url}}">Cancel</a>
             <input type="submit" name="submit" id="submit" class="button button-primary" value="Confirmar exclusão">
         </p>
     </form>

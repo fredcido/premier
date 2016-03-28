@@ -17,10 +17,10 @@ $panel->add([
 $panel->add([
     'type' => 'sub-panel',
     'parent' => 'mainPanel',
-    'as' => 'listEmail',
+    'as' => 'listPanel',
     'title' => 'List Management',
     'slug' => 'premiernewsletter-list',
-    'uses' => __NAMESPACE__.'\Controllers\ListController@list',
+    'uses' => __NAMESPACE__.'\Controllers\ListController@index',
     'get' => [
         'form' => __NAMESPACE__.'\Controllers\ListController@form',
         'confirm-delete' => __NAMESPACE__.'\Controllers\ListController@confirmDelete',
@@ -29,5 +29,19 @@ $panel->add([
         'create' => __NAMESPACE__.'\Controllers\ListController@create',
         'update' => __NAMESPACE__.'\Controllers\ListController@update',
         'delete' => __NAMESPACE__.'\Controllers\ListController@delete',
+    ],
+]);
+
+$panel->add([
+    'type' => 'sub-panel',
+    'parent' => 'mainPanel',
+    'as' => 'settingsPanel',
+    'title' => 'Settings',
+    'slug' => 'premiernewsletter-settings',
+    'uses' => __NAMESPACE__.'\Controllers\SettingsController@form',
+    'post' => [
+        'create' => __NAMESPACE__.'\Controllers\SettingsController@create',
+        'update' => __NAMESPACE__.'\Controllers\SettingsController@update',
+        'delete' => __NAMESPACE__.'\Controllers\SettingsController@delete',
     ],
 ]);
