@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 class PreSettings extends Eloquent
 {
     protected $table = 'pre_settings';
-    protected $guarded = array('id');
+    protected $fillable = array('mailgun_private_key');
     public $timestamps = false;
 }

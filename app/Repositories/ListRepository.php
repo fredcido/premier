@@ -22,7 +22,7 @@ final class ListRepository extends AbstractRepository
      */
     public function __construct()
     {
-        $this->_mailgun = MailgunFactory::create(Helper::get('mailgun.private-key'));
+        $this->_mailgun = MailgunFactory::create();
     }
 
     /**

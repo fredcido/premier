@@ -5,20 +5,20 @@ namespace PremierNewsletter;
 /* @var \Herbert\Framework\Panel $panel */
 
 $panel->add([
-    'type'  => 'panel',
-    'as'    => 'mainPanel',
-    'title' => 'Premier',
-    'rename'=> 'Dashboard',
-    'slug'  => 'premiernewsletter-dashboard',
-    'icon'  => Helper::assetUrl('/img/icon.jpeg'),
-    'uses'  => __NAMESPACE__.'\Controllers\DashboardController@index',
+    'type'   => 'panel',
+    'as'     => 'mainPanel',
+    'title'  => 'Premier',
+    'rename' => 'Dashboard',
+    'slug'   => 'premiernewsletter-dashboard',
+    'icon'   => Helper::assetUrl('/img/icon.jpeg'),
+    'uses'   => __NAMESPACE__.'\Controllers\DashboardController@index',
 ]);
 
 $panel->add([
     'type'   => 'sub-panel',
     'parent' => 'mainPanel',
     'as'     => 'listPanel',
-    'title'  => 'List Management (RAPADURA)',
+    'title'  => 'List Management',
     'slug'   => 'premiernewsletter-list',
     'uses'   => __NAMESPACE__.'\Controllers\ListController@index',
     'get'    => [
@@ -40,8 +40,6 @@ $panel->add([
     'slug'   => 'premiernewsletter-settings',
     'uses'   => __NAMESPACE__.'\Controllers\SettingsController@form',
     'post'   => [
-        'create' => __NAMESPACE__.'\Controllers\SettingsController@create',
         'update' => __NAMESPACE__.'\Controllers\SettingsController@update',
-        'delete' => __NAMESPACE__.'\Controllers\SettingsController@delete',
     ],
 ]);

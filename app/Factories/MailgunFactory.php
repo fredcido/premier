@@ -3,6 +3,7 @@
 namespace PremierNewsletter\Factories;
 
 use Mailgun\Mailgun;
+use PremierNewsletter\Repositories\SettingsRepository;
 
 final class MailgunFactory
 {
@@ -13,8 +14,10 @@ final class MailgunFactory
      *
      * @return Mailgun\Mailgun Object mailgun
      */
-    public static function create($privateKey)
+    public static function create()
     {
-        return new Mailgun($privateKey);
+        $settingsRepository = new SettingsRepository();
+        $settings = $settingsRepository->findFirst();
+        return new Mailgun($settings['mailgun_private_key']);
     }
 }
