@@ -12,3 +12,13 @@ $api->add('helper', function () {
 
     return forward_static_call_array(__NAMESPACE__ . '\\Helper::' . $method, $args);
 });
+
+/**
+ * Gives you access to the translation method from Twig
+ * {{ PremierNewsletter.t('text', 'domain') }}
+ */
+$api->add('t', function ()
+{
+    $args = func_get_args();
+    return call_user_func_array('__', $args);
+});

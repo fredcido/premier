@@ -58,6 +58,20 @@ class Helper
     }
 
     /**
+     * Prefixes a given string using define prefix 
+     * 
+     * @param  string $string
+     * @param  string $splitter
+     * @return string
+     */
+    public static function prefix($string, $splitter = '_')
+    {
+        $prefix = self::get('prefix');
+        $prefix = trim($prefix, $splitter);
+        return sprintf("%s%s%s", $prefix, $splitter, $string);
+    }
+
+    /**
      * Gets a path to a relative file.
      *
      * @param  string $file
@@ -101,4 +115,15 @@ class Helper
             substr(self::asset($file), strlen(content_directory()))
         );
     }
+
+    /**
+     * @param  string
+     * @param  string
+     * @return string
+     */
+    public static function t($text, $domain = 'premier-newsletter')
+    {
+        return __($text, $domain);
+    }
+
 }

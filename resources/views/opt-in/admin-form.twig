@@ -1,0 +1,12 @@
+<p>
+    <label for="{{ widget.get_field_id('title') }}">
+        Title
+    </label> 
+    <input required class="widefat" id="{{ widget.get_field_id( 'title' ) }}" name="{{ widget.get_field_name( 'title' ) }}" type="text" value="{{ title }}">
+</p>
+<p>
+    <label for="{{ widget.get_field_id('list') }}">
+        Deafult List
+    </label> 
+    <input class="widefat" id="{{ widget.get_field_id( 'list' ) }}" name="{{ widget.get_field_name( 'list' ) }}" type="text" value="{{ list }}">
+</p>
