@@ -352,12 +352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "9b6ee2aa549c3c3c4de5ca5018b31c6dc18c283d"
+                "reference": "629e1b070a9149ef8bb38b67a737603cf69ec1d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/9b6ee2aa549c3c3c4de5ca5018b31c6dc18c283d",
-                "reference": "9b6ee2aa549c3c3c4de5ca5018b31c6dc18c283d",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/629e1b070a9149ef8bb38b67a737603cf69ec1d9",
+                "reference": "629e1b070a9149ef8bb38b67a737603cf69ec1d9",
                 "shasum": ""
             },
             "require": {
@@ -404,7 +404,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2016-03-24 15:08:12"
+            "time": "2016-03-28 14:44:19"
         },
         {
             "name": "illuminate/http",

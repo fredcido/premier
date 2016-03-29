@@ -1,37 +1,41 @@
 <div class="wrap">
-  <h1>
-    List Management
-    <a href="{{panel_url}}&action=form" class="page-title-action">{{label_add}}</a>
-  </h1>
-  <br class="clear">
-  <div class="form-row">
-    <table class="wp-list-table widefat fixed striped posts mb">
-      <thead>
-        <th>Address</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Members Count</th>
-        <th>Access Level</th>
-        <th>Created At</th>
-        <th>Action</th>
-      </thead>
-      <tbody>
-        {% for list in lists %}
-          <tr>
-            <td>{{ list.address }}</td>
-            <td>{{ list.name }}</td>
-            <td>{{ list.description }}</td>
-            <td>{{ list.members_count }}</td>
-            <td>{{ list.access_level }}</td>
-            <td>{{ list.created_at }}</td>
-            <td>
-                <a href="{{panel_url}}&action=form&address={{list.address}}">View</a> |
-                <a href="#">Export</a> |
-                <a href="{{panel_url}}&action=confirm-delete&addresses[]={{list.address}}" style="color:#a00">Delete</a>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+    <h1>
+        List Management
+        <a href="{{panel_url}}&action=form" class="page-title-action">{{label_add}}</a>
+    </h1>
+
+    <br class="clear">
+    <div class="form-row">
+        <table class="wp-list-table widefat fixed striped posts mb">
+            <thead>
+                <th>Address</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Members Count</th>
+                <th>Access Level</th>
+                <th>Created At</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                {% for list in lists %}
+                    <tr>
+                        <td>{{ list.address }}</td>
+                        <td>{{ list.name }}</td>
+                        <td>{{ list.description }}</td>
+                        <td>{{ list.members_count }}</td>
+                        <td>{{ list.access_level }}</td>
+                        <td>{{ list.created_at }}</td>
+                        <td>
+                            <a href="{{panel_url}}&action=form&address={{list.address}}">View</a>
+                            |
+                            <a href="#">Export</a>
+                            |
+                            <a href="{{panel_url}}&action=confirm-delete&addresses[]={{list.address}}" style="color:#a00">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>

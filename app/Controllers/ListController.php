@@ -7,6 +7,7 @@ use Herbert\Framework\Notifier;
 use Herbert\Framework\RedirectResponse;
 use PremierNewsletter\Repositories\ListRepository;
 use PremierNewsletter\Repositories\DomainRepository;
+use PremierNewsletter\Grids\ListGrid;
 
 final class ListController extends AbstractController
 {
@@ -33,10 +34,25 @@ final class ListController extends AbstractController
      */
     public function index()
     {
+
+
+        $option = 'per_page';
+    	$args   = [
+    		'label'   => 'Customers',
+    		'default' => 5,
+    		'option'  => 'customers_per_page'
+    	];
+
+    	add_screen_option( $option, $args );
+
+        $exampleListTable = new ListGrid();
+        
+
         $data = [
             'lists'     => $this->_listRepository->getAll(),
             'label_add' => esc_html_x('Add New', 'premier'),
             'panel_url' => $this->getPanelUrl(),
+            'grid' => $exampleListTable->list_table_page()
         ];
 
         return view('@PremierNewsletter/list-email/index.twig', $data);
